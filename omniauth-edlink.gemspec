@@ -10,9 +10,6 @@ Gem::Specification.new do |gem|
   gem.homepage = 'https://github.com/u2i/omniauth-edlink'
   gem.license = 'Apache-2.0'
 
-  gem.signing_key = ENV['GEM_PRIVATE_KEY']
-  gem.cert_chain = ['gem-public_cert.pem']
-
   gem.files = `git ls-files`.split($/)
   gem.executables = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
