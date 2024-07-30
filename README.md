@@ -37,6 +37,12 @@ Or, alternatively, if you use [Devise](https://github.com/plataformatec/devise),
                  'your-edlink-secret-key'
 ```
 
+If for some reason you know the Edlink's integration id for a particular SSO request (e.g. from your application subdomain or from typed email address) and you want to take your users directly to their upstream SSO login page instead of generic Edlink login page, you can pass additional `integration_id` parameter to the redirect request, e.g.:
+```ruby
+redirect_to "/auth/edlink?integration_id=#{integration_id}"
+```
+This will redirect the user to the Edlink's SSO login page for the specified integration id.
+
 # Contributing
 1. Fork it
 2. Create your feature branch (git checkout -b my-new-feature)

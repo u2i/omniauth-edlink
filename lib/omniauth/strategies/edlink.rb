@@ -26,6 +26,12 @@ module OmniAuth
         raw_info[options.uid_field.to_s]
       end
 
+      def request_phase
+        integration_id = request.params['integration_id']
+        authorize_path = integration_id.present? ? integration_authorize_path(integration_id) : options.client_options.authorize_url
+        redirect client.connection.build_url(URI.join(options.client_options.site, authorize_path), authorize_params)
+      end
+
       def authorize_params
         super.tap do |params|
           params[:scope] = [:email, :profile]
@@ -49,6 +55,10 @@ module OmniAuth
 
       def callback_url
         full_host + callback_path
+      end
+
+      def integration_authorize_path(integration_id)
+        "/api/authentication/integrations/#{integration_id}/launch"
       end
     end
   end
