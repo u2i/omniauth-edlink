@@ -21,6 +21,8 @@ module OmniAuth
         access_token_class: AccessToken
       }
       option :uid_field, 'id'
+      # `state` injected during the request phase is lost by Edlink, you don't get it in the callback phase.
+      option :provider_ignores_state, true
 
       uid do
         raw_info[options.uid_field.to_s]
