@@ -35,10 +35,9 @@ module OmniAuth
       end
 
       def authorize_params
-        super.tap do |params|
-          params[:scope] = [:email, :profile]
-          params[:response_type] = :code
-        end
+        super
+          .merge({ :redirect_uri => callback_url })
+          .merge(client.auth_code.authorize_params)
       end
 
       info do
