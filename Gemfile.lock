@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-edlink (0.1.0)
+    omniauth-edlink (0.3.0)
       omniauth-oauth2 (~> 1.4)
 
 GEM
@@ -52,6 +52,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-23
+  x86_64-darwin-23
 
 DEPENDENCIES
   omniauth-edlink!

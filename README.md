@@ -51,4 +51,4 @@ This will redirect the user to the Edlink's SSO login page for the specified int
 5. Create new Pull Request
 
 # License
-Apache 2.0
+MIT
