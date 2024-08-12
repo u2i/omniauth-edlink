@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.description = 'Unofficial OmniAuth strategy for Edlink SSO OAuth2 integration'
   gem.summary = 'The unofficial strategy for authenticating users using ed.link using OAuth2 provider'
   gem.homepage = 'https://github.com/u2i/omniauth-edlink'
-  gem.license = 'Apache-2.0'
+  gem.license = 'MIT'
 
   gem.files = `git ls-files`.split($/)
   gem.executables = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
